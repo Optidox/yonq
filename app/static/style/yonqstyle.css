@@ -1,0 +1,53 @@
+#page-container {
+	margin: auto;
+	width: 50%;
+}
+
+@media (max-width: 788px) {
+	#page-container {
+		margin: auto;
+		width: 100%;
+	}
+}
+
+#title-container {
+	background-image: url("tree.jpg");
+	background-size: cover;
+	margin: auto;
+	width: 100%;
+}
+
+#title {
+	text-align: center;
+	font-size: 5em;
+	margin: 0;
+}
+
+h1, h2, h3, h4 {
+	color: #FF0000;
+	font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+}
+
+table, tr, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+td {
+	padding: 6px 24px 6px 24px;
+}
+
+td p {
+	margin: 0;
+}
+
+#header-row td {
+	background-color: grey;
+	font-weight: bold;
+}
+
+.yonq {
+	color: #FF0000;
+	font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+}
