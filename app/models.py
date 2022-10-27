@@ -4,6 +4,7 @@ from flask_login import UserMixin
 
 
 class User(UserMixin, db.Model):
+    __table_args__ = {'extend_existing': True}
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.Unicode(64), index=True, unique=True)
     email = db.Column(db.Unicode(320), index=True, unique=True)
