@@ -1,3 +1,14 @@
+body {
+  background-image: url("../images/lefthamlet.png"), url("../images/righthamlet.png");
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed, fixed;
+  background-position: left, right;
+  background-size: 25%, 25%;
+  font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+  height: 100%;
+
+}
+
 #page-container {
 	margin: auto;
 	width: 50%;
@@ -25,7 +36,6 @@
 
 h1, h2, h3, h4 {
 	color: #FF0000;
-	font-family: "Comic Sans MS", "Comic Sans", sans-serif;
 }
 
 table, tr, td {
@@ -45,9 +55,4 @@ td p {
 #header-row td {
 	background-color: grey;
 	font-weight: bold;
-}
-
-.yonq {
-	color: #FF0000;
-	font-family: "Comic Sans MS", "Comic Sans", sans-serif;
 }
