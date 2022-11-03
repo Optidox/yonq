@@ -46,4 +46,24 @@ def register():
         db.session.add(user)
         db.session.commit()
         return redirect(url_for('login'))
-    return render_template('register.html', title='Register', form=form)
+    return render_template('register.html', form=form)
+
+
+@app.route('/blog')
+def blog():
+    return redirect(url_for('blogging.index'))
+
+
+@app.route('/post', methods=['GET', 'POST'])
+def post():
+    return redirect(url_for('blogging.editor'))
+
+
+@app.route('/authors')
+def authors():
+    return render_template('base.html')
+
+
+@app.route('/about')
+def about():
+    return render_template('base.html')

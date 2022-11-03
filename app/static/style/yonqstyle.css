@@ -1,12 +1,46 @@
 body {
-  background-image: url("../images/lefthamlet.png"), url("../images/righthamlet.png");
+  background-image: url("../images/lefthamlet.jpg"), url("../images/righthamlet.jpg");
   background-repeat: no-repeat, no-repeat;
   background-attachment: fixed, fixed;
   background-position: left, right;
+  background-color: #f1f2dc;
   background-size: 25%, 25%;
   font-family: "Comic Sans MS", "Comic Sans", sans-serif;
   height: 100%;
+}
 
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+#title {
+    position: fixed;
+    left: 76%;
+    top: 0px;
+    font-size: 144px;
+    padding: 0px;
+    margin: 0px;
+}
+
+#navbar {
+    font-size: 64px;
+    position: fixed;
+    left: 1%;
+    top: 0px;
+    padding: 0px;
+    margin: 0px;
 }
 
 #page-container {
@@ -26,12 +60,6 @@ body {
 	background-size: cover;
 	margin: auto;
 	width: 100%;
-}
-
-#title {
-	text-align: center;
-	font-size: 5em;
-	margin: 0;
 }
 
 h1, h2, h3, h4 {

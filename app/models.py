@@ -1,4 +1,4 @@
-from app import db, login
+from app import db, login, blog_engine
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 
@@ -21,5 +21,6 @@ class User(UserMixin, db.Model):
         return check_password_hash(self.password_hash, password)
 
     @login.user_loader
+    @blog_engine.user_loader
     def load_user(uid):
         return User.query.get(int(uid))

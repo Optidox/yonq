@@ -1,3 +1,3 @@
-.red {
-    color: 	color: #FF0000;
+.red, nav>a {
+    color: #FF0000;
 }

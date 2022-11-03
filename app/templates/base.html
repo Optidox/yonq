@@ -7,16 +7,16 @@
     <title>YONQ</title>
 </head>
 <body>
-  <div>
-      <a href="{{ url_for('home') }}">YONQ</a>
-      {% if current_user.is_anonymous %}
-        <a href="{{ url_for('login') }}">login</a>
-      {% else %}
-        <a href="{{url_for('logout') }}">logout</a>
-      {% endif %}
-      <a href="https://yonq.itch.io/">itch</a>
-      <a href="login">login</a></div>
-  <hr>
-  {% block content %}{% endblock %}
+    <p class="red" id="title">YONQ</p>
+    <nav id="navbar">
+        <a href="{{ url_for('home') }}">HOME</a><br>
+        <a href="https://yonq.itch.io/">DOWNLOADS</a><br>
+        <a href="{{ url_for('blog') }}">BLOG</a><br>
+        <a href="{{ url_for('authors')}}">AUTHORS</a><br>
+        <a href="{{ url_for('about') }}">ABOUT</a><br>
+    </nav>
+    <div id="page-container">
+        {% block content %}{% endblock %}
+    </div>
 </body>
 </html>
