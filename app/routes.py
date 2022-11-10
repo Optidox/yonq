@@ -4,11 +4,15 @@ from app.forms import LoginForm, RegistrationForm
 from app.models import User
 from flask_login import current_user, login_user, logout_user
 from werkzeug.urls import url_parse
+import requests
+from html import unescape
 
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    emoji = unescape(requests.get('https://ranmoji.herokuapp.com/emojis/api/v.1.0/').json()['emoji'])
+    print(emoji)
+    return render_template('home.html', emoji=emoji)
 
 
 @app.route('/login', methods=['GET', 'POST'])
