@@ -11,7 +11,6 @@ from html import unescape
 @app.route('/')
 def home():
     emoji = unescape(requests.get('https://ranmoji.herokuapp.com/emojis/api/v.1.0/').json()['emoji'])
-    print(emoji)
     return render_template('home.html', emoji=emoji)
 
 
@@ -45,7 +44,7 @@ def register():
         return redirect(url_for('home'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        user = User(username=form.username.data, email=form.email.data, permissions='member')
+        user = User(username=form.username.data, email=form.email.data, admin=False)
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()

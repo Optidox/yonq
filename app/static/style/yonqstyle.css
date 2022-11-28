@@ -1,12 +1,51 @@
+#page-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    max-width: 100%;
+    overflow: auto;
+}
+
+#lefthamlet, #righthamlet {
+    top: 0px;
+    flex: 0 0 25%;
+    position: sticky;
+    background-repeat: no-repeat;
+    background-size: 25vw 100vh;
+}
+
+#lefthamlet {
+    background-image: url("../images/lefthamlet.jpg");
+}
+
+#righthamlet {
+    background-image: url("../images/righthamlet.jpg");
+}
+
+#pagecontent {
+    flex: 0 0 50%;
+    margin: 8px;
+}
+
+/* @media only screen and (max-width: 600px) {
+    body {
+        background-color: #f1f2dc;
+        background-image: url("../images/fullhamlet.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%, 100%;
+    }
+}*/
+
 body {
-  background-image: url("../images/lefthamlet.jpg"), url("../images/righthamlet.jpg");
+  /*background-image: url("../images/lefthamlet.jpg"), url("../images/righthamlet.jpg");
   background-repeat: no-repeat, no-repeat;
   background-attachment: fixed, fixed;
   background-position: left, right;
+  background-size: 26%, 26%;*/
   background-color: #f1f2dc;
-  background-size: 25%, 25%;
   font-family: "Comic Sans MS", "Comic Sans", sans-serif;
-  height: 100%;
+  margin: 0;
 }
 
 a:link {
@@ -27,9 +66,9 @@ a:active {
 
 #title {
     position: fixed;
-    left: 76%;
-    top: 0px;
-    font-size: 144px;
+    left: 74.4%;
+    top: 12.4%;
+    font-size: 6vmin;
     padding: 0px;
     margin: 0px;
 }
@@ -43,44 +82,6 @@ a:active {
     margin: 0px;
 }
 
-#page-container {
-	margin: auto;
-	width: 50%;
-}
-
-@media (max-width: 788px) {
-	#page-container {
-		margin: auto;
-		width: 100%;
-	}
-}
-
-#title-container {
-	background-image: url("tree.jpg");
-	background-size: cover;
-	margin: auto;
-	width: 100%;
-}
-
 h1, h2, h3, h4 {
 	color: #FF0000;
-}
-
-table, tr, td {
-	border: 1px solid black;
-	border-collapse: collapse;
-	text-align: center;
-}
-
-td {
-	padding: 6px 24px 6px 24px;
-}
-
-td p {
-	margin: 0;
-}
-
-#header-row td {
-	background-color: grey;
-	font-weight: bold;
 }

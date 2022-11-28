@@ -1,3 +1,7 @@
 .red, nav>a {
     color: #FF0000;
 }
+
+.center {
+    text-align: center;
+}

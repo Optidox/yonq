@@ -9,7 +9,7 @@ class User(UserMixin, db.Model):
     username = db.Column(db.Unicode(64), index=True, unique=True)
     email = db.Column(db.Unicode(320), index=True, unique=True)
     password_hash = db.Column(db.Unicode(256))
-    permissions = db.Column(db.String(16))
+    admin = db.Column(db.Boolean)
 
     def __repr__(self):
         return f'<User {self.username}>'

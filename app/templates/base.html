@@ -7,16 +7,22 @@
     <title>YONQ</title>
 </head>
 <body>
-    <p class="red" id="title">Y {{ emoji }} NQ</p>
-    <nav id="navbar">
-        <a href="{{ url_for('home') }}">HOME</a><br>
-        <a href="https://yonq.itch.io/">DOWNLOADS</a><br>
-        <a href="{{ url_for('blog') }}">BLOG</a><br>
-        <a href="{{ url_for('authors')}}">AUTHORS</a><br>
-        <a href="{{ url_for('about') }}">ABOUT</a><br>
-    </nav>
     <div id="page-container">
-        {% block content %}{% endblock %}
+        <div id="lefthamlet">
+            <nav id="navbar">
+                <a href="{{ url_for('home') }}">HOME</a><br>
+                <a href="https://yonq.itch.io/">DOWNLOADS</a><br>
+                <a href="{{ url_for('blog') }}">BLOG</a><br>
+                <a href="{{ url_for('authors')}}">AUTHORS</a><br>
+                <a href="{{ url_for('about') }}">ABOUT</a><br>
+            </nav>
+        </div>
+        <div id="pagecontent">
+            {% block content %}{% endblock %}
+        </div>
+        <div id="righthamlet">
+            <p class="red" id="title">Y{{ emoji }}NQ</p>
+        </div>
     </div>
 </body>
 </html>
