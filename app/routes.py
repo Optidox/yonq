@@ -10,8 +10,8 @@ from html import unescape
 
 @app.route('/')
 def home():
-    emoji = unescape(requests.get('https://ranmoji.herokuapp.com/emojis/api/v.1.0/').json()['emoji'])
-    return render_template('home.html', emoji=emoji)
+    #emoji = unescape(requests.get('https://ranmoji.herokuapp.com/emojis/api/v.1.0/').json()['emoji'])
+    return render_template('home.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
