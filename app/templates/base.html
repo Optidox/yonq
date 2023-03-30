@@ -12,7 +12,6 @@
             <nav id="navbar">
                 <a href="{{ url_for('home') }}">HOME</a><br>
                 <a href="https://yonq.itch.io/">DOWNLOADS</a><br>
-                <a href="{{ url_for('blog') }}">BLOG</a><br>
                 <a href="{{ url_for('authors')}}">AUTHORS</a><br>
                 <a href="{{ url_for('about') }}">ABOUT</a><br>
             </nav>
@@ -24,5 +23,6 @@
             <p class="red" id="title">YONQ</p>
         </div>
     </div>
+    {% block scripts %}{% endblock %}
 </body>
 </html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../static/style/yonqstyle.css">
+    <link rel="stylesheet" type="text/css" href="../static/style/helpers.css">
+    <title>YONQ</title>
+    <style>
+      body { padding: 24px; }
+    </style>
+</head>
+<body>
+  <div class="section">
+    <div class="content">
+      <h2>Add Post</h2>
+      <form action="{{ url_for('post') }}"  method="post">
+      {{ form.hidden_tag() }}
+        <div class="field">
+          {{ form.post_title.label(class_='label') }}
+          <p class="control">
+            {{ form.post_title(class_="input") }}
+          </p>
+          {% for error in form.post_title.errors %}
+            <p class="help is-danger">{{ error }} ]</p>
+          {% endfor %}
+        </div>
+        <div class="field">
+          {{ form.post.label(class_='label') }}
+          <p class="control">
+            {% set p = form.post.process_data(post) %}
+            {{ form.post(rows=16) }}
+          </p>
+          {% for error in form.post.errors %}
+          <p class="help is-danger">{{ error }} ]</p>
+          {% endfor %}
+        </div>
+        <div class="field">
+          <div class="control">
+            {{ form.submit(class_="button is-link") }}
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  {% include 'tinymce.html' %}
+</body>

@@ -8,7 +8,3 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    BLOGGING_URL_PREFIX = "/blog"
-    BLOGGING_SITEURL = "http://127.0.0.1:5000"
-    BLOGGING_SITENAME = "yonq"
-

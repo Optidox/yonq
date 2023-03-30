@@ -24,13 +24,16 @@
 
 #pagecontent {
     flex: 0 0 50%;
+}
+
+#pagecontent > * {
     margin: 8px;
 }
 
-/* @media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 700px) {
     body {
         background-color: #f1f2dc;
-        background-image: url("../images/fullhamlet.jpg");
+        background-image: url("../images/justhamlet.jpg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: 100%, 100%;
@@ -66,15 +69,15 @@ a:active {
 
 #title {
     position: fixed;
-    left: 74.4%;
-    top: 12.4%;
-    font-size: 6vmin;
+    left: 75.9vw;
+    top: 20.6vh;
+    font-size: 9vmin;
     padding: 0px;
     margin: 0px;
 }
 
 #navbar {
-    font-size: 64px;
+    font-size: 3vw;
     position: fixed;
     left: 1%;
     top: 0px;

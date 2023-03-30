@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .red, {
+        color: #FF0000;
+    }
+    .center {
+        text-align: center;
+    }
+    #page-container {
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+        max-width: 100%;
+        overflow: auto;
+    }
+
+    #lefthamlet, #righthamlet {
+        top: 0px;
+        flex: 0 0 25%;
+        position: sticky;
+        background-repeat: no-repeat;
+        background-size: 25vw 100vh;
+    }
+
+    #lefthamlet {
+        background-image: url("../images/lefthamlet.jpg");
+    }
+
+    #righthamlet {
+        background-image: url("../images/righthamlet.jpg");
+    }
+
+    #pagecontent {
+        flex: 0 0 50%;
+    }
+
+    #pagecontent > * {
+        margin: 8px;
+    }
+
+    /* @media only screen and (max-width: 700px) {
+        body {
+            background-color: #f1f2dc;
+            background-image: url("../images/justhamlet.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%, 100%;
+        }
+    }*/
+    body {
+      background-color: #f1f2dc;
+      font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+      margin: 0;
+    }
+
+    a:link {
+      text-decoration: none;
+    }
+
+    a:visited {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    a:active {
+      text-decoration: none;
+    }
+
+    #title {
+        position: fixed;
+        left: 75.9vw;
+        top: 20.6vh;
+        font-size: 9vmin;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    #navbar {
+        font-size: 3vw;
+        position: fixed;
+        left: 1%;
+        top: 0px;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    h1, h2, h3, h4 {
+        color: #FF0000;
+    }
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../static/style/yonqstyle.css">
+    <link rel="stylesheet" type="text/css" href="../static/style/helpers.css">
+    <title>YONQ</title>
+</head>
+<body>
+    <div id="page-container">
+        <div id="lefthamlet">
+            <nav id="navbar">
+                <a href="{{ url_for('home') }}">HOME</a><br>
+                <a href="https://yonq.itch.io/">DOWNLOADS</a><br>
+                <a href="{{ url_for('authors')}}">AUTHORS</a><br>
+                <a href="{{ url_for('about') }}">ABOUT</a><br>
+            </nav>
+        </div>
+            <div id="pagecontent">
+            <h2 class="center">AUTHORNAME</h2>
+                <p>"<span class="red">YONQ</span>? Yeah, I think I remember <span class="red">YONQ</span>. Wandered through here about 6 months ago, crashed on my couch for a few weeks, then left in the night without saying a word. Left most of its clothes here and some weird blue slime shit in the bathroom. It… it wasn't a very good guest, but there was something nice about having it around. It was fun. A fucking asshole, but fun."</p>
+                <p>"<span class="red">YONQ</span> rolled through this town going 40 miles over the speed limit and so amped up on methamphetamine that it thought its gear stick was a gun. Dunno how it survived crashing into the tree so fast, or how it managed to evade the cops for 72 hours before they finally pinned it down inside an old construction site, or how it managed to slip out the back of a moving squad vehicle while handcuffed. Either way, it's moved on now. I kinda feel blessed to have seen it do its thing anyway."</p>
+                <p>"Did you know that there's a shockingly good market for bootleg Aheago sweatshirts in Helena, Montana? I didn't, but <span class="red">YONQ</span> somehow did, and it made a killing for a long time before the mob decided it was muscling in on their territory. Managed to take out three people in the ensuing gunfight, but it had to flee after taking a slug to the shoulder. I dunno what I'm going to do with all this unsold shirts."</p>
+                <p>"Yeah, it's in Switzerland now. Heard it through a friend of a friend. Apparently it somehow managed to swing a job as an advisor at one of those big global banks. You didn't hear this from me, but apparently it's already got its hands in all sort of international markets. Yeah, if everything goes right, it might not be much longer until we're all scrambling to invest in <span class="red">YONQ</span>buxx."</p>
+                <p>"<span class="red">YONQ</span>'s gone, man. Not here. Vanished one day and no one knows where it went. Maybe… I don't know. Maybe we'll see it again when it decides it's ready to come back. But there's going to be a lot of people angry around here when it first shows its face."</p>
+                <p>In other words, <span class="red">YONQ</span> is an independent art collective of hideous things that publish a self-titled literary magazine. We publish outsider art, genre fiction, mumblecore furries and many other things on an irregular basis.</p>
+                <h2 class="center">Publications</h2>
+                <p>All currently published issues of <span class="red">YONQ</span> can be found <a href="https://yonq.itch.io/">here</a> on our itch storefront.</p>
+                <p>In addition to its zines, <span class="red">YONQ</span> also publishes pieces online at the <a href="yonqblog/"><span class="red">YONQ</span>blog</a>.</p>
+                <h2 class="center">Contact and Submissions</h2>
+                <p>
+                    <span class="red">YONQ</span>is no longer accepting submissions, although we can still be reached at<a href="mailto:yonqzine@gmail.com"><span class="red">YONQ</span>zine@gmail.com</a>. Submissions should be 500-4000 words long. We accept basically any type of writing - poetry, essays, fiction, memoir, etc, and do not have strict limitations on style or tone, but we do tend to lean more towards the bizarre, outlandish, experimental, and so forth. Basically we want to accept submissions that prove the author is as fucked in the head as we are. If you want to know what this looks like in practice, read our issue backlog.</p>
+                <p>The first quarterly issue will consist of three themes: <span class="red">America</span>, <span class="red">Apocalypse</span>, and <span class="red">Automobiles</span>. Your submission must fit into one of these themes in some clear way, and you must clearly state which theme you wish to write for in the body of your email. Also in the body of your email should be the name you wish to be credited under if accepted and a 1-3 sentence biography (none of the information in this biography has to be true. In fact, we highly encourage you to falsify as much as possible).</p>
+                <p>You will maintain control/ownership of your work and can do what you want with it in other places outside of <span class="red">YONQ</span>, although by sending it in to us you are giving us permission to publish it in an issue of our magazine.</p>
+                <p>We will not accept submissions that we deem racist, homophobic, sexist, transphobic, ableist, etc etc.</p>
+                <p>Unfortunately we do not have the funds to financially compensate submissions at this time, though we hope to change this in the future.</p>
+                <p>For other inquiries, <span class="red">YONQ</span> can be reached on Twitter at <a href="https://twitter.com/yonqzine">@<span class="red">YONQ</span>zine</a> or by email at <a href="mailto:yonqzine@gmail.com"><span class="red">YONQ</span>zine@gmail.com</a>.</p>
+            </div>
+        <div id="righthamlet">
+            <p class="red" id="title">YONQ</p>
+        </div>
+    </div>
+</body>
+<script>
+    let new_var = 0;
+</script>
+</html>

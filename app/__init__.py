@@ -9,9 +9,7 @@ app = Flask(__name__)
 app.config.from_object(Config)
 db = SQLAlchemy(app)
 storage = SQLAStorage(db=db)
-blog_engine = BloggingEngine()
-blog_engine.init_app(app, storage)
-migrate = Migrate(app, db)
+migrate = Migrate(app, db, render_as_batch=True)
 login = LoginManager(app)
 login.login_view = 'login'
 

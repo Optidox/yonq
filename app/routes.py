@@ -1,8 +1,8 @@
 from app import app, db
 from flask import render_template, redirect, url_for, request
-from app.forms import LoginForm, RegistrationForm
-from app.models import User
-from flask_login import current_user, login_user, logout_user
+from app.forms import LoginForm, RegistrationForm, ContentForm
+from app.models import User, Post
+from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
 import requests
 from html import unescape
@@ -44,22 +44,14 @@ def register():
         return redirect(url_for('home'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        user = User(username=form.username.data, email=form.email.data, admin=False)
-        user.set_password(form.password.data)
-        db.session.add(user)
+        new_user = User(username=form.username.data, email=form.email.data)
+        new_user.set_password(form.password.data)
+        with open('templates/default_author_page.html') as f:
+            new_user.post_template = f.read()
+        db.session.add(new_user)
         db.session.commit()
         return redirect(url_for('login'))
     return render_template('register.html', form=form)
-
-
-@app.route('/blog')
-def blog():
-    return redirect(url_for('blogging.index'))
-
-
-@app.route('/post', methods=['GET', 'POST'])
-def post():
-    return redirect(url_for('blogging.editor'))
 
 
 @app.route('/authors')
@@ -70,3 +62,35 @@ def authors():
 @app.route('/about')
 def about():
     return render_template('base.html')
+
+
+@app.route('/<username>')
+def user(username):
+    user = User.query.filter_by(username=username).first_or_404()
+
+
+# @app.route('edit/<username>', methods=['GET', 'POST'])
+# @login_required
+# def edit_author_page(username):
+#   if username != current_user.username:
+#        return redirect(url_for(home))
+#    form = ContentForm()
+#    if request.method == 'GET':
+#        form.content.data = current_user.author_page
+#    if form.validate_on_submit():
+
+@app.route('/post', methods=['GET', 'POST'])
+@login_required
+def post():
+    form = ContentForm()
+    post = User.load_user(current_user.id).post_template
+    if form.validate_on_submit():
+        new_post = Post(post_title=form.post_title.data, body=form.post.data, author=current_user.id)
+        db.session.add(new_post)
+        db.session.commit()
+    return render_template('post.html', form=form, post=post)
+
+
+@app.route('/imageuploader', methods=['GET', 'POST'])
+def imageuploader():
+    return redirect(url_for('home'))
